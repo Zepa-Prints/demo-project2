@@ -1,0 +1,30 @@
+.pt {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+.pt__panel {
+  position: absolute;
+  inset: 0;
+  visibility: hidden; /* GSAP owns the transform; shown only while wiping */
+}
+.pt__panel--a {
+  background: var(--accent);
+}
+.pt__panel--b {
+  background: var(--ink);
+  display: grid;
+  place-items: center;
+}
+.pt__label {
+  overflow: hidden;
+  color: var(--bone);
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 1;
+  padding-bottom: 0.1em;
+}
+.pt__label span {
+  display: block;
+  font-style: italic;
+}

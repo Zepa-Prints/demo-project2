@@ -1,0 +1,241 @@
+/* ---------- marquee ---------- */
+.mq {
+  overflow: hidden;
+  padding: clamp(1.1rem, 2.4vw, 2rem) 0;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.mq--dark {
+  background: var(--ink);
+  color: var(--bone);
+  border-color: var(--line-light);
+}
+.mq__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: mqLoop 38s linear infinite;
+}
+@keyframes mqLoop {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mq__track {
+    animation: none;
+  }
+}
+.mq--dark .mq__item svg {
+  fill: var(--accent);
+}
+.mq__item {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-right: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+.mq__item:nth-child(even) .serif {
+  font-style: italic;
+}
+.mq__item svg {
+  width: clamp(1rem, 2vw, 1.6rem);
+  fill: currentColor;
+}
+
+/* ---------- way ---------- */
+.way__head {
+  margin-bottom: 2.5rem;
+}
+.way__top {
+  display: grid;
+  grid-template-columns: 1fr 34%;
+  gap: 1.25rem;
+  align-items: end;
+}
+.way__statement {
+  font-size: clamp(1.9rem, 4.4vw, 5rem);
+  line-height: 1.04;
+  max-width: 20ch;
+  text-indent: clamp(2rem, 9vw, 10rem);
+}
+.way__figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.way__figure-img {
+  border-radius: var(--radius-sm);
+}
+.way__figure-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+@media (min-width: 900px) {
+  .way__top {
+    grid-template-columns: 1fr minmax(260px, 28%);
+    gap: clamp(2rem, 6vw, 7rem);
+  }
+  .way__figure {
+    margin-bottom: 0.6rem;
+  }
+}
+@media (max-width: 599px) {
+  .way__top {
+    grid-template-columns: 1fr;
+  }
+  .way__figure {
+    width: 62%;
+    margin-left: auto;
+    margin-top: 1.5rem;
+  }
+  .way__statement {
+    text-indent: 2.4rem;
+  }
+}
+.way__statement div {
+  text-indent: 0;
+}
+
+.way__grid {
+  margin-top: clamp(4rem, 9vw, 9rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+.way__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-self: center;
+}
+.way__img {
+  border-radius: var(--radius-sm);
+}
+.way__img--sm {
+  display: none;
+}
+@media (min-width: 900px) {
+  .way__grid {
+    grid-template-columns: 1.1fr 1fr 0.6fr;
+    gap: clamp(2rem, 5vw, 6rem);
+    align-items: start;
+  }
+  .way__copy {
+    padding-top: 12vh;
+  }
+  .way__img--sm {
+    display: block;
+    margin-top: 30vh;
+  }
+}
+
+/* ---------- pillars ---------- */
+.pillars {
+  position: relative;
+}
+.pl-rows {
+  position: relative;
+}
+.pl-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.6rem 1rem;
+  padding: clamp(1.6rem, 3vw, 2.6rem) 0;
+  cursor: default;
+}
+.pl-row__rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--line);
+}
+.pl-row__rule--last {
+  position: relative;
+  display: block;
+  top: auto;
+}
+.pl-row__num {
+  color: var(--muted);
+  padding-top: 0.9em;
+}
+.pl-row__title {
+  font-size: clamp(2.2rem, 6vw, 6.4rem);
+  line-height: 1;
+  transition: transform 0.7s var(--ease-out), color 0.4s;
+}
+.pl-row__text {
+  grid-column: 2;
+  max-width: 30rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  transition: color 0.4s;
+}
+@media (min-width: 900px) {
+  .pl-row {
+    grid-template-columns: 6rem 1.6fr 1fr;
+    align-items: center;
+  }
+  .pl-row__text {
+    grid-column: 3;
+    justify-self: end;
+    text-align: right;
+  }
+  .pl-rows:hover .pl-row__title {
+    color: rgba(20, 20, 19, 0.25);
+  }
+  .pl-rows .pl-row:hover .pl-row__title {
+    color: var(--ink);
+    font-style: italic;
+    transform: translateX(1.5rem);
+  }
+  .pl-row:hover .pl-row__text {
+    color: var(--ink);
+  }
+}
+
+.pl-float {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: clamp(14rem, 20vw, 20rem);
+  aspect-ratio: 3 / 4;
+  margin: calc(clamp(14rem, 20vw, 20rem) * -0.66) 0 0 calc(clamp(14rem, 20vw, 20rem) * -0.5);
+  border-radius: 1rem;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.6);
+  z-index: 5;
+  display: none;
+}
+@media (any-pointer: fine) and (min-width: 900px) {
+  .pl-float {
+    display: block;
+  }
+}
+.pl-float img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: opacity 0.5s, transform 0.9s var(--ease-out);
+}
+.pl-float img.is-active {
+  opacity: 1;
+  transform: scale(1);
+}

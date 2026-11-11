@@ -1,0 +1,204 @@
+/* Sticky Grid Scroll — sizes scale with the viewport like the original (1440 design) */
+.sg {
+  --u: calc(100vw / 1440);
+  background: var(--bone);
+}
+
+.sg-intro {
+  position: relative;
+  z-index: 3;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  color: var(--paper);
+  background: var(--ink);
+}
+.sg-intro__media {
+  position: absolute;
+  inset: 0;
+}
+.sg-intro__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.sg-intro__caption {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+.sg-intro__caption .display {
+  max-width: 14ch;
+}
+.sg-intro__caption em {
+  color: var(--accent);
+  background: none;
+  padding: 0;
+}
+
+.sg-main {
+  height: 425vh;
+  position: relative;
+}
+.sg-main__wrapper {
+  position: sticky;
+  top: 0;
+  padding: 0 calc(var(--u) * 24);
+  overflow: hidden;
+  will-change: transform;
+  background: var(--bone);
+}
+.sg-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+.sg-content__title {
+  max-width: 924px;
+  width: calc(var(--u) * 924);
+  min-width: 300px;
+  font-size: clamp(2.6rem, calc(var(--u) * 104), 7rem);
+  line-height: 1.02;
+}
+.sg-content__description {
+  width: calc(var(--u) * 455);
+  min-width: 280px;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.sg-content__button {
+  margin-top: 2rem;
+}
+
+.sg-gallery {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: calc(var(--u) * 736);
+  min-width: 330px;
+}
+.sg-gallery__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: calc(var(--u) * 32);
+  row-gap: calc(var(--u) * 40);
+  will-change: transform;
+}
+.sg-gallery__item {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: calc(var(--u) * 10);
+  background: #cfc9be;
+  will-change: transform;
+}
+.sg-gallery__item img,
+.sg-gallery__item .img-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  .sg-gallery__grid {
+    column-gap: 10px;
+    row-gap: 12px;
+  }
+}
+
+/* ---------- phones: swipe strip instead of the pinned grid zoom ---------- */
+.sg-m {
+  display: none;
+}
+@media (max-width: 767px) {
+  .sg-main {
+    display: none;
+  }
+  .sg-m {
+    display: block;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  .sg-m__head {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .sg-m__desc {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .sg-m__strip {
+    list-style: none;
+    margin: 0 calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 0.5rem;
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--gutter);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sg-m__strip::-webkit-scrollbar {
+    display: none;
+  }
+  .sg-m__item {
+    position: relative;
+    flex: 0 0 72vw;
+    aspect-ratio: 4 / 5;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    background: #d9d6cf;
+    scroll-snap-align: start;
+  }
+  .sg-m__item img,
+  .sg-m__item .img-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .sg-m__cap {
+    position: absolute;
+    left: 0.7rem;
+    bottom: 0.7rem;
+    right: 0.7rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(26, 24, 23, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--paper);
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-self: start;
+    width: max-content;
+    max-width: calc(100% - 1.4rem);
+  }
+  .sg-m__btn {
+    margin-top: 1.8rem;
+  }
+}

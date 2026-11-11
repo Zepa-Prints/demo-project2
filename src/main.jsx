@@ -1,0 +1,17 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+// self-hosted fonts (no Google request, no font swap flash)
+import './styles/fonts.css'
+import './styles/base.css'
+import App from './App'
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+)

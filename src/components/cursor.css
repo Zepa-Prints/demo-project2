@@ -1,0 +1,60 @@
+.cursor {
+  display: none;
+}
+@media (any-pointer: fine) {
+  .cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 950;
+    pointer-events: none;
+    opacity: 0;
+    mix-blend-mode: difference;
+  }
+  .cursor__ring {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: -7px;
+    top: -7px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 0.45s var(--ease-out), background-color 0.3s;
+  }
+  .cursor--link .cursor__ring {
+    transform: scale(3.2);
+  }
+  .cursor--down .cursor__ring {
+    transform: scale(0.7);
+  }
+  .cursor--label {
+    mix-blend-mode: normal;
+  }
+  .cursor--label .cursor__ring {
+    transform: scale(6.6);
+    background: var(--accent);
+  }
+  .cursor__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+    color: var(--on-accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: opacity 0.3s, transform 0.45s var(--ease-out);
+  }
+  .cursor--label .cursor__label {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.cursor.cursor--hide {
+  visibility: hidden;
+}

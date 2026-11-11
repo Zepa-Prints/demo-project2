@@ -1,0 +1,90 @@
+.fn {
+  padding-top: clamp(4rem, 9vw, 8rem);
+  padding-bottom: clamp(4rem, 9vw, 8rem);
+}
+.fn--light {
+  background: var(--bone);
+}
+.fn__card {
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 4.5rem);
+  align-items: center;
+}
+.fn__photo {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  max-width: 34rem;
+  width: 100%;
+}
+.fn__photo img {
+  object-position: 55% 30%;
+}
+.fn__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 40rem;
+}
+.fn__quote {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+.fn__mark {
+  display: block;
+  height: 0.55em;
+  margin-bottom: 0.1em;
+  font-size: 2.6em;
+  line-height: 1;
+  color: var(--accent);
+}
+.fn--light .fn__mark {
+  color: var(--ink);
+  -webkit-text-stroke: 0;
+  text-shadow: 0.06em 0.06em 0 var(--accent);
+}
+.fn__by {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.fn--dark .fn__by {
+  color: rgba(255, 255, 255, 0.6);
+}
+.fn__by strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.fn--dark .fn__by strong {
+  color: var(--paper);
+}
+.fn__line {
+  width: 2.4rem;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.fn__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+@media (min-width: 900px) {
+  .fn__card {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  }
+  .fn__photo {
+    aspect-ratio: 4 / 5;
+  }
+  .fn--flip .fn__photo {
+    order: 2;
+    justify-self: end;
+  }
+}

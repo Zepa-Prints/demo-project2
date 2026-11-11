@@ -1,0 +1,40 @@
+.pg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+.pg__canvas,
+.pg__canvas canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.pg__canvas canvas {
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out);
+}
+.pg--webgl .pg__canvas canvas {
+  opacity: 1;
+}
+.pg__fallback {
+  position: absolute;
+  inset: 0;
+}
+.pg__fallback img,
+.pg__fallback video,
+.pg__fallback .img-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s var(--ease-out), transform 6s linear;
+}
+.pg__fallback .is-active {
+  opacity: 1;
+  transform: scale(1);
+}

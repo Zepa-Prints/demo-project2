@@ -1,0 +1,62 @@
+.ru {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.ru__grid {
+  display: grid;
+  gap: 4rem;
+}
+.ru__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.ru__left em {
+}
+.ru__details {
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.6rem 2rem;
+}
+.ru__details dd {
+  margin: 0.45rem 0 0;
+  font-size: 0.98rem;
+  color: var(--ink-2);
+}
+.ru__right {
+  align-self: end;
+}
+@media (min-width: 1000px) {
+  .ru__grid {
+    grid-template-columns: 1fr 1.15fr;
+    gap: clamp(4rem, 8vw, 9rem);
+  }
+}
+
+.ru__office {
+  display: block;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+.ru__office:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+.ru__office-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ru__details dd a[href^='mailto'] {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 560px) {
+  .ru__details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
