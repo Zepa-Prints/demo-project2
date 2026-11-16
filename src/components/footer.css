@@ -287,3 +287,10 @@
     justify-content: space-between;
   }
 }
+
+.ft__ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  font-size: 0.78rem;
+}

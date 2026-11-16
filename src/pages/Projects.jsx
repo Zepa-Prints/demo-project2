@@ -80,7 +80,7 @@ export default function Projects() {
         clips={HERO_PHOTOS}
         kicker={`Portfolio — ${PROJECTS.length} projects`}
         title={['Our', <em key="p">Projects</em>]}
-        intro="Homes, a hospital, a restaurant — and our first building in Hyderabad, rising now."
+        intro="Turnkey projects we have delivered — homes, a hospital, a restaurant — and a PG hostel rising in Hyderabad."
         scrollTarget="#all-projects"
       />
 
@@ -180,9 +180,10 @@ export default function Projects() {
             Where we <em>learned the trade</em>
           </h2>
           <p className="lead">
-            Long before Yashveer Constructions had a name, our founder was on sites like these — large residential
-            communities built for another company. Every tower was completed and every home sold. We keep that chapter
-            nameless, but it&rsquo;s where our standards come from.
+            Long before Yashveer Constructions had a name, our team was on sites like these — large residential communities,
+            hospitals of up to 500 beds, mega kitchens, warehouses and pharma plants, built for a corporate company. Every
+            tower was completed and every home sold. We keep that chapter nameless, but it&rsquo;s where our standards come
+            from — and why we can build more.
           </p>
         </div>
         <div className="pj-prev__imgs">

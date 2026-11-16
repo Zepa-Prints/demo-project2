@@ -1,0 +1,41 @@
+.sv-hero {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  padding-top: clamp(8rem, 16vw, 12rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+@media (min-width: 1000px) {
+  .sv-hero {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: clamp(3rem, 6vw, 7rem);
+  }
+}
+.sv-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.sv-hero__title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.25em;
+  font-size: clamp(3.4rem, min(9vw, 16vh), 9rem);
+  line-height: 0.95;
+}
+.sv-hero__word {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.sv-hero__word > span {
+  display: inline-block;
+}
+.sv-hero__intro {
+  max-width: 36rem;
+}
+.sv-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}

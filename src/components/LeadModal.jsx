@@ -113,11 +113,14 @@ export function LeadProvider({ children }) {
               </button>
 
               <div className="lm__head">
-                <span className="idx">Book a site visit</span>
+                <span className="idx">Start your project</span>
                 <h2 id="lm-title" className="display lm__title">
-                  Let&rsquo;s find your <em>place</em>
+                  Let&rsquo;s build <em>it right</em>
                 </h2>
-                <p className="lm__sub">Leave your details and our team will call you back within one working day.</p>
+                <p className="lm__sub">
+                  Tell us what you&rsquo;re planning — residential, commercial or industrial, and where. We&rsquo;ll call you back
+                  within one working day with next steps and a rough estimate.
+                </p>
               </div>
 
               <ContactForm defaultProperty={state.property} />

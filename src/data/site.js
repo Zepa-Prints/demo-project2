@@ -57,8 +57,9 @@ export const FALLBACK_IMG = PHOTOS.kamalaFront
 
 export const SHOWREEL = { video: '/videos/interiors-reel.mp4', mobile: '/videos/interiors-reel-m.mp4', poster: '/videos/interiors-reel.jpg' }
 export const FOUNDER = {
+  name: 'Veerendra Karla',
   photo: '/images/founder/founder.webp',
-  role: 'Founder, Yashveer Constructions',
+  role: 'Director, Yashveer Constructions',
 }
 
 // Work from the founder's years with another company — shown without names or locations
@@ -83,10 +84,10 @@ const V = (n) => ({
   posterMobile: `/videos/home/${n}-m.jpg`,
 })
 export const HOME_HERO_VIDEOS = [
-  { ...V('01-garden'), headline: ['Where neighbours', 'turn into', '*family*'] },
-  { ...V('02-living'), headline: ['Rooms made', 'for *light*,', 'life & laughter'] },
-  { ...V('03-amenities'), headline: ['Your weekends', 'start right', 'at the *doorstep*'] },
-  { ...V('04-bedroom'), headline: ['Quiet rooms,', '*restful* nights,', 'built to last'] },
+  { ...V('01-garden'), headline: ['Your land.', 'Our build.', 'Your *keys*.'] },
+  { ...V('02-living'), headline: ['Ideate, design,', '*build* — one', 'team, one contract'] },
+  { ...V('03-amenities'), headline: ['Homes, hospitals', '& factories —', 'built *turnkey*'] },
+  { ...V('04-bedroom'), headline: ['Finished to', 'the last *detail*,', 'ready to use'] },
 ]
 
 export const COMPANY = {
@@ -94,9 +95,12 @@ export const COMPANY = {
   short: 'Yashveer',
   legal: 'Yashveer Constructions Pvt. Ltd.',
   telugu: 'యష్ వీర్ కన్‌స్ట్రక్షన్స్ ప్రైవేట్ లిమిటెడ్',
-  tagline: 'Creating spaces that endure',
+  tagline: 'Ideate · Design · Build',
+  kind: 'Turnkey construction contractor',
   founded: 2020,
-  experience: 14, // years the founder has been building
+  experience: 15, // years of construction experience (shown as "15+")
+  cin: '', // fill in to show in the footer
+  gst: '', // fill in to show in the footer
   phone: '+91 906 361 8888',
   phoneHref: 'tel:+919063618888',
   whatsapp: 'https://wa.me/919063618888',
@@ -273,61 +277,18 @@ export const PROJECTS = [
 export const getProject = (slug) => PROJECTS.find((p) => p.slug === slug)
 
 /* ---------------- HOME CONTENT ---------------- */
-export const PILLARS = [
-  {
-    title: 'Futuristic Designs',
-    text: 'Plans that let light and air into every room, and façades that still look right in twenty years.',
-    img: PHOTOS.kamalaFront,
-  },
-  {
-    title: 'Thriving Communities',
-    text: 'Courtyards and shared spaces placed so that neighbours actually meet.',
-    img: PHOTOS.kamalaCourtyard,
-  },
-  {
-    title: 'Appreciating Assets',
-    text: 'Well-chosen locations and honest construction, so a Yashveer building only becomes more valuable.',
-    img: PHOTOS.kamalaTower,
-  },
-  {
-    title: 'Masterfully Crafted Spaces',
-    text: 'Homes, hospitals and restaurants, finished with the same care, checked by the same people.',
-    img: PHOTOS.kamalaBedroom,
-  },
-]
 
 export const STATS = [
   { value: COMPANY.experience, suffix: '+', label: 'Years in construction' },
-  { value: 50, suffix: '', label: 'Homes at Kamala Residency' },
-  { value: 3, suffix: '', label: 'Landmark projects delivered' },
-  { value: 2, suffix: '', label: 'States · AP & Telangana' },
+  { value: 25, suffix: '', label: 'Point quality checks' },
+  { value: 3, suffix: '', label: 'Sectors · residential, commercial, industrial' },
+  { value: 500, suffix: '', label: 'Bed hospitals — the scale our team has built' },
 ]
 
-export const PROCESS = [
-  {
-    title: 'Land & Approvals',
-    text: 'Titles checked and approvals in place before a single brick is laid.',
-    img: IMG.blueprint,
-  },
-  {
-    title: 'Design & Engineering',
-    text: 'Architects and structural engineers plan the building as one — light, air, structure and services together.',
-    img: sm(PHOTOS.kamalaFacade),
-  },
-  {
-    title: 'Construction',
-    text: 'Our own site team, good materials and the founder on site — 14 years of habits that do not cut corners.',
-    img: IMG.crane,
-  },
-  {
-    title: 'Handover & Care',
-    text: 'We hand over finished, clean spaces, and we stay reachable long after the keys change hands.',
-    img: sm(PHOTOS.kamalaKitchen),
-  },
-]
 
 export const NAV = [
   { label: 'Home', to: '/' },
+  { label: 'What we do', to: '/services' },
   { label: 'Projects', to: '/projects' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },

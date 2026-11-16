@@ -10,7 +10,7 @@ import './listings.css'
  * a large rounded stage with cross-fading media, a vertical project list,
  * and an info panel that re-animates on every switch.
  */
-export default function Listings() {
+export default function Listings({ index = '06' }) {
   const root = useRef(null)
   const [active, setActive] = useState(0)
   const p = PROJECTS[active]
@@ -49,14 +49,14 @@ export default function Listings() {
   return (
     <section className="section ls wrap" ref={root}>
       <div className="section-head">
-        <span className="idx">03 — Our projects</span>
+        <span className="idx">{index} — Our work</span>
         <div className="ls__head">
           <SplitReveal as="h2" className="display h-lg">
             Explore the <em>spaces</em> we&rsquo;ve built
           </SplitReveal>
           <p className="lead">
-            Homes in Vijayawada, a hospital in Guntur, a restaurant in Kanuru and our first project in Hyderabad — each one
-            built by the same team, to the same standard.
+            Homes in Vijayawada, a hospital in Guntur, a restaurant in Kanuru and a PG hostel rising in Hyderabad — each one
+            built by the same team, to the same 25-point standard.
           </p>
         </div>
       </div>

@@ -13,10 +13,11 @@ export default function ReachUs({ defaultProperty, index = '05' }) {
         <div className="ru__left">
           <span className="idx">{index} — Reach us</span>
           <SplitReveal as="h2" className="display h-lg">
-            Let&rsquo;s find your <em>place</em>
+            Planning a <em>project?</em>
           </SplitReveal>
           <p className="lead" data-fade>
-            Ask about a project, plan a visit, or tell us what you want to build. Our team will call you back within one working day.
+            Tell us two things — is it residential, commercial or industrial, and which city? We&rsquo;ll help you understand
+            the estimated cost and what to look for in a contractor agreement. Our team calls back within one working day.
           </p>
           <dl className="ru__details" data-fade>
             <div>

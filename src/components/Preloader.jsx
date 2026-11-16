@@ -77,7 +77,7 @@ export default function Preloader() {
         <span className="pl__bar">
           <i />
         </span>
-        <span className="label">{COMPANY.experience} years of building</span>
+        <span className="label">{COMPANY.experience}+ years of building</span>
       </div>
     </div>
   )

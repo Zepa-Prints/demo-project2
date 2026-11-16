@@ -1,11 +1,12 @@
 import { useRef } from 'react'
 import { gsap, useGSAP } from '../../lib/gsap'
-import { PROCESS } from '../../data/site'
+import { STAGES } from '../../data/turnkey'
+import { TLink } from '../../components/Transition'
 import { Img } from '../../components/ui'
 import './process.css'
 
 /** Pinned horizontal scroll on desktop, stacked cards on mobile. */
-export default function Process() {
+export default function Process({ index = '04' }) {
   const root = useRef(null)
 
   useGSAP(
@@ -64,21 +65,24 @@ export default function Process() {
     <section className="pr section--dark" ref={root}>
       <div className="pr__track">
         <div className="pr__intro">
-          <span className="idx">04 — How we build</span>
+          <span className="idx">{index} — How we operate</span>
           <h2 className="display h-lg">
-            From bare land
+            Ideate. Design.
             <br />
-            to <em>your keys</em>
+            <em>Build.</em>
           </h2>
           <p className="lead">
-            Four stages, one accountable team. Every Yashveer project follows the same disciplined path — so the home you are
-            promised is the home you receive.
+            One accountable team from the first conversation to the day you turn the key — and you choose how much of it we
+            take on.
           </p>
+          <TLink to="/services" className="pr__link line-link">
+            See our design &amp; build packages →
+          </TLink>
           <div className="pr__progress">
             <i />
           </div>
         </div>
-        {PROCESS.map((s, i) => (
+        {STAGES.map((s, i) => (
           <article className="pr__card" key={s.title}>
             <div className="pr__card-media">
               <div className="img-wrap">
@@ -90,6 +94,13 @@ export default function Process() {
               <div>
                 <h3 className="serif pr__title">{s.title}</h3>
                 <p className="pr__text">{s.text}</p>
+                {s.points && (
+                  <ul className="pr__points">
+                    {s.points.map((pt) => (
+                      <li key={pt}>{pt}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </article>

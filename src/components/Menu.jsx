@@ -9,7 +9,7 @@ import Logo from './logo/Logo'
 import { useLead, waLink, WhatsAppIcon } from './LeadModal'
 import './menu.css'
 
-const NAV_IMAGES = { '/': PHOTOS.kamalaFront, '/projects': PHOTOS.kamalaCourtyard, '/about': PHOTOS.kamalaBedroom, '/contact': PHOTOS.svHall }
+const NAV_IMAGES = { '/': PHOTOS.kamalaFront, '/services': PHOTOS.kamalaFacade, '/projects': PHOTOS.kamalaCourtyard, '/about': PHOTOS.kamalaBedroom, '/contact': PHOTOS.svHall }
 
 /**
  * Expanding rounded menu — adapted from codrops/ExpandingRoundedMenu.
@@ -268,7 +268,7 @@ export default function Menu() {
                 ))}
               </h3>
               <p className="label menu__est" data-menu-fade>
-                Constructions · Est. {COMPANY.founded} · {COMPANY.experience} years on site
+                Constructions · Turnkey · {COMPANY.experience}+ years of experience
               </p>
             </div>
           </div>

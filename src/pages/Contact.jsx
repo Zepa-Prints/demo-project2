@@ -43,8 +43,8 @@ export default function Contact() {
             </span>
           </h1>
           <p className="lead ct__intro" data-ct-fade>
-            Looking for a home, planning a building of your own, or just curious about our work — talk to us directly. No
-            pressure, just honest answers.
+            Planning a house, a hospital, a restaurant or a plant? Tell us what it is and where — we&rsquo;ll walk you through
+            the turnkey route, the packages and a rough estimate. No pressure, just honest answers.
           </p>
         </div>
         <ImageStack className="ct__stack" images={[sm(PHOTOS.kamalaFront), sm(PHOTOS.svFrontage), sm(PHOTOS.kamalaBedroom)]} />
@@ -52,7 +52,7 @@ export default function Contact() {
       <div className="ct__grid">
         <div className="ct__info">
           <p className="lead" data-ct-fade>
-            Ask about a project, request a visit, or tell us what you would like to build. We usually reply within a working
+            Residential, commercial or industrial — tell us your project type and city, and we usually reply within a working
             day.
           </p>
           <div className="ct__block" data-ct-fade>

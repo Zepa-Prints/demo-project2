@@ -13,6 +13,7 @@ import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Services from './pages/Services'
 import NotFound from './pages/NotFound'
 
 function Pages() {
@@ -21,6 +22,7 @@ function Pages() {
     <main key={location.pathname}>
       <Routes location={location}>
         <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/about" element={<About />} />

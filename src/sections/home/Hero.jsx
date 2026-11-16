@@ -114,11 +114,11 @@ export default function Hero() {
       <div className="hero__inner wrap" style={hidden}>
         <div className="hero__top">
           <p className="label" data-hero-fade>
-            {COMPANY.name}
+            {COMPANY.name} · {COMPANY.tagline}
           </p>
           <p className="hero__intro" data-hero-fade>
-            Homes, hospitals and hospitality spaces across Andhra Pradesh &amp; Telangana — built by a team with{' '}
-            {COMPANY.experience} years on site.
+            Turnkey construction — one team from the first idea to the final handover, with {COMPANY.experience}+ years of
+            building behind it.
           </p>
         </div>
 

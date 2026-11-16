@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { gsap, ScrollTrigger, SplitText, useGSAP } from '../../lib/gsap'
-import { COMPANY, PHOTOS, PILLARS, sm } from '../../data/site'
+import { COMPANY, PHOTOS, sm } from '../../data/site'
+import { BENEFITS, TURNKEY_DEFINITION } from '../../data/turnkey'
 import { TLink } from '../../components/Transition'
 import { Arrow, RevealImage, src, useFadeUp } from '../../components/ui'
 import './way.css'
@@ -92,12 +93,12 @@ export default function Way() {
         <div className="way__text">
           <div className="way__head">
             <span className="idx" data-fade>
-              01 — The Yashveer Way
+              01 — Who we are
             </span>
           </div>
           <p className="way__statement display">
-            Embodying the spirit of modern India, we understand that a living space transcends mere walls — it&rsquo;s where{' '}
-            <em>dreams unfold</em> and lives are truly lived.
+            You bring the land and the idea. We <em>ideate, design and build</em> — and hand you the keys to a finished
+            building.
           </p>
         </div>
         <figure className="way__figure">
@@ -113,18 +114,16 @@ export default function Way() {
         <RevealImage img={PHOTOS.kamalaTower} alt="A Yashveer residential building" className="way__img" ratio="4 / 5" w={1200} />
         <div className="way__copy">
           <p className="lead" data-fade>
-            Yashveer Constructions was founded in {COMPANY.founded}, but the hands behind it have been building for{' '}
-            {COMPANY.experience} years. That experience now goes into homes, hospitals and hospitality spaces across Andhra
-            Pradesh and Telangana.
+            Yashveer Constructions is a turnkey contracting company driven by {COMPANY.experience}+ years of experience in the
+            construction industry. We don&rsquo;t only develop our own projects — we take on yours: your land, your house,
+            your hospital, restaurant or plant, built for you from start to finish, anywhere in India.
           </p>
           <p className="lead" data-fade data-delay="0.1">
-            We are committed to creating more than just buildings: spaces that age well, communities that feel like
-            neighbourhoods, and assets that grow in value. Drawing from a long legacy on site, we blend expertise with an
-            unwavering dedication to quality — so your aspirations find a canvas to extend and flourish.
+            {TURNKEY_DEFINITION} One contract, one accountable team, one fixed price agreed upfront.
           </p>
           <div data-fade data-delay="0.2">
-            <TLink to="/about" className="btn">
-              Know more <Arrow />
+            <TLink to="/services" className="btn">
+              What we do <Arrow />
             </TLink>
           </div>
         </div>
@@ -135,7 +134,7 @@ export default function Way() {
 }
 
 /* ---------- Pillars: hover rows with floating image ---------- */
-export function Pillars() {
+export function Pillars({ index = '02' }) {
   const root = useRef(null)
   const float = useRef(null)
 
@@ -187,14 +186,14 @@ export function Pillars() {
   return (
     <section className="section pillars wrap" ref={root}>
       <div className="section-head">
-        <span className="idx">02 — What we stand for</span>
+        <span className="idx">{index} — Why turnkey</span>
         <h2 className="display h-lg">
-          Four promises, <em>built in</em>
+          The turnkey <em>advantage</em>
         </h2>
       </div>
 
       <div className="pl-rows" onMouseLeave={hide}>
-        {PILLARS.map((p, i) => (
+        {BENEFITS.map((p, i) => (
           <div className="pl-row" key={p.title} onMouseEnter={() => show(i)}>
             <span className="pl-row__rule" />
             <span className="pl-row__num label">0{i + 1}</span>
@@ -206,7 +205,7 @@ export function Pillars() {
       </div>
 
       <div className="pl-float" ref={float} aria-hidden="true">
-        {PILLARS.map((p) => (
+        {BENEFITS.map((p) => (
           <img key={p.title} src={src(sm(p.img), 700)} alt="" loading="lazy" />
         ))}
       </div>

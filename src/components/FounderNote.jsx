@@ -28,7 +28,7 @@ export default function FounderNote({ kicker, quote, children, tone = 'light', f
           <p className="fn__by" data-fade>
             <span className="fn__line" aria-hidden="true" />
             <span>
-              <strong>Our founder</strong>
+              <strong>{FOUNDER.name}</strong>
               <br />
               {FOUNDER.role}
             </span>

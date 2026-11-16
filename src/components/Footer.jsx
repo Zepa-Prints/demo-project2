@@ -74,8 +74,16 @@ export default function Footer() {
       <div className="wrap ft__grid">
         <div className="ft__col ft__col--brand">
           <Logo variant="stack" className="ft__logo" title={COMPANY.legal} />
-          <p className="ft__muted">{COMPANY.tagline}.</p>
+          <p className="ft__muted">
+            {COMPANY.tagline} — {COMPANY.kind.toLowerCase()}.
+          </p>
           <p className="ft__telugu" lang="te">{COMPANY.telugu}</p>
+          {(COMPANY.cin || COMPANY.gst) && (
+            <p className="ft__muted ft__ids">
+              {COMPANY.cin && <span>CIN: {COMPANY.cin}</span>}
+              {COMPANY.gst && <span>GST: {COMPANY.gst}</span>}
+            </p>
+          )}
         </div>
         <div className="ft__col">
           <h4 className="label label--muted">Quick links</h4>

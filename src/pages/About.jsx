@@ -1,6 +1,8 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { Flip, gsap, useGSAP } from '../lib/gsap'
-import { IMG, PHOTOS, PILLARS, COMPANY, FOUNDER_CLIP, sm } from '../data/site'
+import { IMG, PHOTOS, COMPANY, FOUNDER_CLIP, sm } from '../data/site'
+import { STAGES } from '../data/turnkey'
+import { Team, Experience } from '../sections/turnkey/Team'
 import { TLink, useTransition } from '../components/Transition'
 import { Arrow, ArrowUpRight, Img, RevealImage, SplitReveal, useFadeUp } from '../components/ui'
 import AutoVideo from '../components/AutoVideo'
@@ -19,13 +21,13 @@ import './about.css'
 const CONTENT = [
   {
     img: PHOTOS.kamalaCourtyard,
-    title: [`${COMPANY.experience} years,`, 'brick by brick'],
+    title: [`${COMPANY.experience}+ years,`, 'brick by brick'],
     meta: [['Vijayawada'], ['Founded', `in ${COMPANY.founded}`], ['On site', `since ${new Date().getFullYear() - COMPANY.experience}`]],
   },
   {
     img: PHOTOS.kamalaFront,
     title: ['Building for the', 'India of tomorrow'],
-    meta: [['Our vision'], ['Spaces for', 'generations'], ['Andhra Pradesh', '& Telangana']],
+    meta: [['Turnkey'], ['Ideate · Design', '· Build'], ['Projects across', 'India']],
   },
 ]
 
@@ -206,7 +208,7 @@ function LinesToLayout() {
 // The founder's story. Project years can be added to the first column once confirmed.
 const START = new Date().getFullYear() - COMPANY.experience
 const MILESTONES = [
-  [String(START), 'First years on site', 'Our founder learns the trade building large residential towers for another company — every one completed, every home sold.', PHOTOS.previous1],
+  [String(START), 'First years on site', 'Our team learns the trade with a large corporate builder — towers, hospitals and factories, every one completed and handed over.', PHOTOS.previous1],
   [String(COMPANY.founded), 'Yashveer Constructions founded', 'With years of site experience behind it, the company is set up in Vijayawada.', IMG.blueprint],
   ['01', 'Kamala Residency, Vijayawada', 'Fifty 2 & 3 BHK homes on 100 Feet Road, Kanuru — and home to our head office.', sm(PHOTOS.kamalaFront)],
   ['02', 'Isha Hospitals, Guntur', 'A premium hospital building with bright, clean wards, now serving patients.', PHOTOS.ishaWard],
@@ -234,7 +236,7 @@ function Timeline() {
       <div className="section-head">
         <span className="idx">Milestones</span>
         <SplitReveal as="h2" className="display h-lg">
-          Fourteen years of <em>keeping promises</em>
+          Fifteen years of <em>keeping promises</em>
         </SplitReveal>
       </div>
       <div className="tl__rows">
@@ -264,7 +266,7 @@ const APPROACH = [
   },
   {
     title: 'Built to outlast us',
-    text: 'Our own engineers on site, honest materials, and every stage checked before the next one begins. Fourteen years of habits that do not cut corners.',
+    text: 'Our own engineers on site, honest materials, and every stage checked before the next one begins. Fifteen years of habits that do not cut corners.',
     img: sm(PHOTOS.kamalaFacade),
   },
   {
@@ -288,20 +290,22 @@ export default function About() {
         <div className="ab-intro__text">
           <span className="idx">Our story</span>
           <SplitReveal as="p" className="ab-story__lead display">
-            Drawing from a rich legacy in construction, we blend expertise with an unwavering dedication to quality and
-            innovation — <em>redefining the art of modern living</em>.
+            A turnkey contracting company, driven by {COMPANY.experience}+ years of experience — <em>one team from the first
+            idea to the final key</em>.
           </SplitReveal>
           <p className="lead" data-fade>
-            Our founder has spent {COMPANY.experience} years on construction sites, building projects under another company
-            before starting Yashveer Constructions in {COMPANY.founded}. The belief behind it is simple: a building is a
-            promise, so it should be built with the care of something that will outlast us.
+            Yashveer Constructions Pvt. Ltd. was set up in {COMPANY.founded} by engineers who had spent years building for a
+            large corporate construction company — high-end homes, villas, hospitals from 50 to 500 beds, restaurants, mega
+            kitchens, warehouses and factories. That breadth is why we work turnkey: we can take any kind of building from
+            design to handover ourselves, across India.
           </p>
           <p className="lead" data-fade>
-            Since then we have delivered Kamala Residency&rsquo;s fifty homes in Vijayawada, Isha Hospitals in Guntur and the
-            Svaadishta restaurant in Kanuru — and we are now building our first project in Hyderabad.
+            Under our own name we have delivered Kamala Residency&rsquo;s fifty homes in Vijayawada, Isha Hospitals in Guntur
+            and the Svaadishta restaurant in Kanuru — and we are now building a PG hostel in Hyderabad. Our own developments,
+            and your projects on your land: both, built the same way.
           </p>
           <div className="ab-values" data-fade>
-            {PILLARS.map((p, i) => (
+            {STAGES.map((p, i) => (
               <div className="ab-values__item" key={p.title}>
                 <span className="label label--muted">0{i + 1}</span>
                 <span className="serif">{p.title}</span>
@@ -315,6 +319,9 @@ export default function About() {
           caption="Inside Kamala Residency"
         />
       </section>
+
+      {/* ---------- directors & team ---------- */}
+      <Team />
 
       {/* ---------- founder clip (a few seconds, muted) ---------- */}
       <section className="section wrap ab-founder">
@@ -389,14 +396,16 @@ export default function About() {
 
       <Timeline />
 
+      <Experience />
+
       <FounderNote
         tone="dark"
         flip
         kicker="Why Yashveer"
-        quote="For years I built under someone else’s name. In 2020 I started Yashveer so that every decision — the steel, the light, the finish — is made on site, by people who care how it turns out."
+        quote="After years of building hospitals, homes and factories for a corporate builder, I started Yashveer so that clients get one accountable team — from the first idea to the day they turn the key."
       />
 
-      <Marquee items={['Integrity', 'Craft', 'Care', 'On-time handover', 'Transparency']} dark />
+      <Marquee items={['Turnkey', 'Integrity', 'Craft', 'Fixed pricing', '25-point quality', 'Transparency']} dark />
 
       {/* ---------- CTA with image ---------- */}
       <section className="section wrap ab-cta">

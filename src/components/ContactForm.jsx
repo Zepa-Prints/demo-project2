@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { gsap } from '../lib/gsap'
 import { PROJECTS } from '../data/site'
+import { BUILD_PACKAGES, DESIGN_PACKAGES, SECTORS } from '../data/turnkey'
 import { Arrow } from './ui'
 import './contact-form.css'
 
@@ -31,7 +32,7 @@ export default function ContactForm({ defaultProperty = '', dark = false }) {
     if (!data.name.trim()) e.name = 'Please tell us your name'
     if (!/^(\+?91[\s-]?)?[6-9]\d{9}$/.test(data.mobile.replace(/\s/g, ''))) e.mobile = 'Enter a valid 10-digit mobile number'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) e.email = 'Enter a valid email'
-    if (!data.property) e.property = 'Select a property'
+    if (!data.property) e.property = 'Choose an option'
     if (!data.consent) e.consent = 'Please accept to continue'
     return e
   }
@@ -138,16 +139,38 @@ export default function ContactForm({ defaultProperty = '', dark = false }) {
       <label className={`cf__field cf__field--select ${errors.property ? 'has-error' : ''} ${data.property ? 'is-filled' : ''}`}>
         <select value={data.property} onChange={set('property')}>
           <option value="" disabled hidden></option>
-          {PROJECTS.map((p) => (
-            <option key={p.slug} value={p.name}>
-              {p.name} — {p.city}
-            </option>
-          ))}
-          <option value="Build with us (new construction)">Build with us — new construction</option>
-          <option value="Not sure yet">Not sure yet</option>
+          <optgroup label="Turnkey project">
+            {SECTORS.map((s) => (
+              <option key={s.key} value={`Turnkey — ${s.title}`}>
+                Turnkey — {s.title}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Design packages">
+            {DESIGN_PACKAGES.map((p) => (
+              <option key={p.name} value={`Design package — ${p.name}`}>
+                {p.name}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Build packages">
+            {BUILD_PACKAGES.map((p) => (
+              <option key={p.name} value={`Build package — ${p.name}`}>
+                {p.name}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Our projects">
+            {PROJECTS.map((p) => (
+              <option key={p.slug} value={p.name}>
+                {p.name} — {p.city}
+              </option>
+            ))}
+          </optgroup>
+          <option value="Not sure yet">Not sure yet — let's talk</option>
         </select>
         <span className="cf__label">
-          Select Property<sup>*</sup>
+          I&rsquo;m interested in<sup>*</sup>
         </span>
         <span className="cf__line" />
         <svg className="cf__chev" viewBox="0 0 24 24" aria-hidden="true">

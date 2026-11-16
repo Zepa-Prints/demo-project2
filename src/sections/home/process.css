@@ -104,3 +104,25 @@
     transform: translateY(-6vh);
   }
 }
+
+/* what each stage includes */
+.pr__points {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.pr__points li {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--line-light);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+.pr__link {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
