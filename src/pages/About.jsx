@@ -377,13 +377,16 @@ export default function About() {
       <section className="ab-reel">
         <div className="wrap ab-reel__head">
           <span className="idx">Inside our work</span>
-          <p className="lead">Homes, a hospital and a restaurant — the finished spaces, as they are lived in today.</p>
+          <p className="lead">Homes, interiors, a hospital and a restaurant — the finished spaces, as they are lived in today.</p>
         </div>
         <PhotoReel
           images={[
             PHOTOS.kamalaFront,
+            PHOTOS.resLiving,
             PHOTOS.kamalaBedroom,
+            PHOTOS.resPooja,
             PHOTOS.svFrontage,
+            PHOTOS.resKitchenIsland,
             PHOTOS.kamalaCourtyard,
             PHOTOS.kamalaKitchen,
             PHOTOS.svEntrance,

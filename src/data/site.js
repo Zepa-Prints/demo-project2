@@ -24,6 +24,7 @@ export const IMG = {
 const K = (n) => `/images/projects/kamala/${n}.webp`
 const I = (n) => `/images/projects/isha/${n}.webp`
 const S = (n) => `/images/projects/svaadishta/${n}.webp`
+const R = (n) => `/images/projects/residence/${n}.webp`
 
 export const PHOTOS = {
   kamalaFront: K('exterior-3'),
@@ -43,14 +44,36 @@ export const PHOTOS = {
   svFrontage: S('frontage'),
   svHall: S('dining-hall'),
   pgExterior: '/images/projects/pg-hostel/exterior.webp',
+  // turnkey interiors — private residence (photos from media-originals/new-photos)
+  resLiving: R('living-swing'),
+  resLivingTv: R('living-tv'),
+  resLivingSofa: R('living-sofa'),
+  resLivingDining: R('living-dining'),
+  resLivingWall: R('living-wall'),
+  resDining: R('dining'),
+  resDining2: R('dining-2'),
+  resCrockery: R('crockery'),
+  resPooja: R('pooja'),
+  resKitchenIsland: R('kitchen-island'),
+  resKitchen: R('kitchen'),
+  resKitchen2: R('kitchen-2'),
+  resBedroom: R('bedroom-1'),
+  resBedroomTv: R('bedroom-tv'),
+  resBedroom2: R('bedroom-2'),
+  resBedroom3: R('bedroom-3'),
+  resEntrance: R('entrance'),
+  resVeena: R('veena-niche'),
   pgRoom: '/images/projects/pg-hostel/room.webp',
   previous1: '/images/previous/township-1.webp',
   previous2: '/images/previous/township-2.webp',
 }
 
 /** smaller version of a project photo for cards / thumbnails (falls back to the original) */
+// (safe to call twice: an already-small path is returned unchanged)
 export const sm = (path) =>
-  path && /\/(kamala|svaadishta)\/(?!dining-hall)[^/]+\.webp$|pg-hostel\/exterior\.webp$/.test(path) ? path.replace('.webp', '-sm.webp') : path
+  path && !/-sm\.webp$/.test(path) && /\/(kamala|svaadishta)\/(?!dining-hall)[^/]+\.webp$|pg-hostel\/exterior\.webp$/.test(path)
+    ? path.replace('.webp', '-sm.webp')
+    : path
 
 // Fallback used by <Img> if any image fails to load
 export const FALLBACK_IMG = PHOTOS.kamalaFront
@@ -181,6 +204,51 @@ export const PROJECTS = [
     address: ['100 Feet Road, Kanuru, Tadigadapa', 'Vijayawada, Andhra Pradesh 520007'],
     coords: '16.4959964,80.7009245',
     map: 'https://maps.app.goo.gl/WBnV8mJPAD2WEPPv9',
+    plans: [],
+  },
+  {
+    slug: 'private-residence-interiors',
+    name: 'Private Residence',
+    type: 'Turnkey interiors',
+    category: 'Residential',
+    location: 'Private home',
+    city: 'Private client',
+    status: 'completed',
+    cover: PHOTOS.resLiving,
+    gallery: [
+      PHOTOS.resLiving,
+      PHOTOS.resLivingSofa,
+      PHOTOS.resDining,
+      PHOTOS.resPooja,
+      PHOTOS.resKitchenIsland,
+      PHOTOS.resCrockery,
+      PHOTOS.resBedroom,
+      PHOTOS.resLivingTv,
+      PHOTOS.resKitchen,
+      PHOTOS.resBedroom2,
+      PHOTOS.resEntrance,
+      PHOTOS.resBedroomTv,
+      PHOTOS.resVeena,
+      PHOTOS.resBedroom3,
+    ],
+    heroImages: [PHOTOS.resLiving, PHOTOS.resDining, PHOTOS.resKitchenIsland, PHOTOS.resBedroom],
+    blurb: 'A complete home interior delivered turnkey — living, dining, pooja, kitchens and bedrooms, designed and finished by our team.',
+    stat: '01',
+    statLabel: 'Team, design to handover',
+    facts: {
+      Type: 'Turnkey home interiors',
+      Scope: 'Living, dining, pooja, kitchens & bedrooms',
+      Delivery: 'Design + build + fit-out',
+      Status: 'Completed',
+    },
+    highlights: ['Swing-seat living room', 'Backlit stone & brass details', 'Island kitchen with full-height storage', 'Custom wardrobes & headboards'],
+    overview: [
+      'The owners handed us an empty apartment and a wish list. We designed every room, built every unit on site and handed it back ready to live in — furniture, lighting, kitchen and wardrobes included.',
+      'Wood, stone and warm lighting run through the whole home: a swing seat in the living room, a carved pooja unit, a brass-lit crockery wall and an island kitchen built for a family that cooks.',
+    ],
+    address: null,
+    coords: null,
+    map: null,
     plans: [],
   },
   {

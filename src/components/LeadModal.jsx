@@ -9,7 +9,7 @@ import './lead-modal.css'
 const Ctx = createContext({ openLead: () => {} })
 export const useLead = () => useContext(Ctx)
 
-export const waLink = (text = 'Hi Yashveer Constructions, I would like to know more about your projects.') =>
+export const waLink = (text = 'Hi Yashveer Constructions, I have a construction requirement, let’s discuss.') =>
   `${COMPANY.whatsapp}?text=${encodeURIComponent(text)}`
 
 export const WhatsAppIcon = ({ className = '' }) => (

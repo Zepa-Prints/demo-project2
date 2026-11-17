@@ -4,6 +4,7 @@ import { COMPANY, PHOTOS, sm } from '../data/site'
 import ImageStack from '../components/ImageStack'
 import { Img } from '../components/ui'
 import ContactForm from '../components/ContactForm'
+import { waLink } from '../components/LeadModal'
 import FounderNote from '../components/FounderNote'
 import { useTransition } from '../components/Transition'
 import { useDocTitle } from '../hooks/useDocTitle'
@@ -60,7 +61,7 @@ export default function Contact() {
             <a href={COMPANY.phoneHref} className="serif ct__big line-link">
               {COMPANY.phone}
             </a>
-            <a href={COMPANY.whatsapp} className="line-link ct__small" target="_blank" rel="noreferrer">
+            <a href={waLink()} className="line-link ct__small" target="_blank" rel="noreferrer">
               Chat on WhatsApp ↗
             </a>
           </div>
@@ -119,7 +120,7 @@ export default function Contact() {
           <p>
             Come to Flat 501, Kamala Residency in Kanuru — see our finished work for yourself, then talk plans over tea.
           </p>
-          <a className="btn btn--light" href={COMPANY.whatsapp} target="_blank" rel="noreferrer">
+          <a className="btn btn--light" href={waLink()} target="_blank" rel="noreferrer">
             Schedule on WhatsApp ↗
           </a>
         </div>

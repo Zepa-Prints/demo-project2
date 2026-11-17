@@ -15,6 +15,7 @@ const FILTERS = [['all', 'All'], ...Object.entries(STATUS)]
 const HERO_PHOTOS = [
   { img: PHOTOS.kamalaFront, label: 'Kamala Residency', duration: 6 },
   { img: PHOTOS.svFrontage, label: 'Svaadishta', duration: 6 },
+  { img: PHOTOS.resLiving, label: 'Private residence · turnkey interiors', duration: 6 },
   { img: PHOTOS.kamalaCourtyard, label: 'Kamala Residency · courtyard', duration: 6 },
   { img: PHOTOS.kamalaBedroom, label: 'Kamala Residency · interiors', duration: 6 },
 ]
@@ -160,7 +161,7 @@ export default function Projects() {
                   <path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" />
                   <circle cx="12" cy="9.5" r="2.5" />
                 </svg>
-                <span>{p.address.join(', ')}</span>
+                <span>{p.address ? p.address.join(', ') : 'Private client — location not disclosed'}</span>
                 {p.map && (
                   <a href={p.map} target="_blank" rel="noopener" className="pj-card__map">
                     Open in Maps <ArrowUpRight />

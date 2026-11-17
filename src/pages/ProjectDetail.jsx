@@ -270,8 +270,12 @@ function Detail({ p }) {
                 View floor plans
               </a>
             ) : (
-              <a href="#location" className="btn btn--ghost" onClick={(e) => (e.preventDefault(), scrollToEl('#location'))}>
-                See location
+              <a
+                href={p.address ? '#location' : '#gallery'}
+                className="btn btn--ghost"
+                onClick={(e) => (e.preventDefault(), scrollToEl(p.address ? '#location' : '#gallery'))}
+              >
+                {p.address ? 'See location' : 'See the gallery'}
               </a>
             )}
           </div>
@@ -329,7 +333,7 @@ function Detail({ p }) {
 
       {/* ---------- GALLERY ---------- */}
       {p.gallery.length > 1 && (
-        <section className="section pd-gal">
+        <section className="section pd-gal" id="gallery">
           <div className="wrap section-head">
             <span className="idx">Gallery</span>
             <h2 className="display h-md">
@@ -355,7 +359,9 @@ function Detail({ p }) {
         </section>
       )}
 
-      {/* ---------- LOCATION ---------- */}
+      {/* ---------- LOCATION (only when the project has a public address) ---------- */}
+      {p.address && (
+        <>
       <section className="section pd-loc wrap section--paper" id="location">
         <div className="pd-loc__grid">
           <div>
@@ -382,6 +388,8 @@ function Detail({ p }) {
           </div>
         </div>
       </section>
+        </>
+      )}
 
       <ReachUs defaultProperty={p.name} index="—" />
 

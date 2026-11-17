@@ -15,7 +15,7 @@ export const SECTORS = [
   {
     key: 'residential',
     title: 'Residential',
-    img: sm(PHOTOS.kamalaFront),
+    img: PHOTOS.resLiving,
     text: 'Real-estate developments with all amenities, independent houses, villas and flats — delivered fully ready for living.',
     points: ['Civil structure', 'Flooring & finishes', 'Plumbing & electrical wiring', 'Interior fittings'],
   },
@@ -60,7 +60,7 @@ export const BENEFITS = [
   {
     title: 'Less stress for owners',
     text: 'Ideal for busy professionals and NRI clients who cannot supervise the site every day.',
-    img: sm(PHOTOS.kamalaBedroom),
+    img: PHOTOS.resBedroom,
   },
   {
     title: 'Streamlined approvals',
@@ -92,7 +92,7 @@ export const STAGES = [
   {
     title: 'Assure & hand over',
     text: 'A predefined BOQ, 25-point quality checks and a monthly project health card — then you turn the key.',
-    img: sm(PHOTOS.kamalaKitchen),
+    img: PHOTOS.resKitchenIsland,
     points: ['Predefined BOQ', '25-point quality checks', 'Monthly health card'],
   },
 ]

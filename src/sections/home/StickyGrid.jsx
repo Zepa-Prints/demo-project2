@@ -8,15 +8,16 @@ import './sticky-grid.css'
 
 // 12 tiles from our own projects, distributed into 3 columns (like the codrops demo)
 const TILES = [
-  PHOTOS.kamalaFront, PHOTOS.kamalaCourtyard, PHOTOS.kamalaBedroom,
-  PHOTOS.svFrontage, PHOTOS.kamalaKitchen, PHOTOS.kamalaBalconies,
-  PHOTOS.ishaFront, PHOTOS.kamalaDining, PHOTOS.svHall,
-  PHOTOS.kamalaTower, PHOTOS.kamalaBedroom2, PHOTOS.ishaWard,
+  PHOTOS.kamalaFront, PHOTOS.resLiving, PHOTOS.kamalaBedroom,
+  PHOTOS.svFrontage, PHOTOS.resKitchenIsland, PHOTOS.kamalaBalconies,
+  PHOTOS.ishaFront, PHOTOS.resDining, PHOTOS.svHall,
+  PHOTOS.kamalaTower, PHOTOS.resBedroom, PHOTOS.kamalaCourtyard,
 ].map(sm)
 
 // phones: a light swipe strip instead of the pinned zoom
 const STRIP = [
   [PHOTOS.kamalaFront, 'Kamala Residency'],
+  [PHOTOS.resLiving, 'Turnkey interiors · private residence'],
   [PHOTOS.kamalaCourtyard, 'Kamala Residency · courtyard'],
   [PHOTOS.kamalaBedroom, 'Kamala Residency · bedroom'],
   [PHOTOS.ishaWard, 'Isha Hospitals, Guntur'],
