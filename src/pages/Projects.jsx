@@ -13,11 +13,11 @@ const FILTERS = [['all', 'All'], ...Object.entries(STATUS)]
 
 // hero: our best large photos (Ken Burns slides)
 const HERO_PHOTOS = [
-  { img: PHOTOS.kamalaFront, label: 'Kamala Residency', duration: 6 },
+  { img: PHOTOS.kamalaFront, label: 'Residential Apartments', duration: 6 },
   { img: PHOTOS.svFrontage, label: 'Svaadishta', duration: 6 },
   { img: PHOTOS.resLiving, label: 'Private residence · turnkey interiors', duration: 6 },
-  { img: PHOTOS.kamalaCourtyard, label: 'Kamala Residency · courtyard', duration: 6 },
-  { img: PHOTOS.kamalaBedroom, label: 'Kamala Residency · interiors', duration: 6 },
+  { img: PHOTOS.kamalaCourtyard, label: 'Residential Apartments · courtyard', duration: 6 },
+  { img: PHOTOS.kamalaBedroom, label: 'Residential Apartments · interiors', duration: 6 },
 ]
 
 export default function Projects() {

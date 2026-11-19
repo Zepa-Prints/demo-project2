@@ -16,13 +16,13 @@ const TILES = [
 
 // phones: a light swipe strip instead of the pinned zoom
 const STRIP = [
-  [PHOTOS.kamalaFront, 'Kamala Residency'],
+  [PHOTOS.kamalaFront, 'Residential Apartments'],
   [PHOTOS.resLiving, 'Turnkey interiors · private residence'],
-  [PHOTOS.kamalaCourtyard, 'Kamala Residency · courtyard'],
-  [PHOTOS.kamalaBedroom, 'Kamala Residency · bedroom'],
-  [PHOTOS.ishaWard, 'Isha Hospitals, Guntur'],
+  [PHOTOS.kamalaCourtyard, 'Residential Apartments · courtyard'],
+  [PHOTOS.kamalaBedroom, 'Residential Apartments · bedroom'],
+  [PHOTOS.ishaWard, 'Isha Hospitals, Nandigama'],
   [PHOTOS.svHall, 'Svaadishta, Vijayawada'],
-  [PHOTOS.kamalaKitchen, 'Kamala Residency · kitchen'],
+  [PHOTOS.kamalaKitchen, 'Residential Apartments · kitchen'],
 ]
 
 /**
@@ -195,7 +195,7 @@ export default function StickyGrid() {
               Spaces that <em>inspire</em>, across two states
             </h2>
             <p className="sg-content__description">
-              From Kanuru to Guntur to Hyderabad — homes, a hospital and a restaurant, built to one uncompromising standard.
+              From Kanuru to Nandigama to Hyderabad — homes, a hospital and a restaurant, built to one uncompromising standard.
             </p>
             <TLink to="/projects" className="btn sg-content__button">
               Explore all projects <Arrow />
@@ -219,7 +219,7 @@ export default function StickyGrid() {
             Spaces that <em>inspire</em>, across two states
           </h2>
           <p className="sg-m__desc">
-            From Kanuru to Guntur to Hyderabad — homes, a hospital and a restaurant, built to one uncompromising standard.
+            From Kanuru to Nandigama to Hyderabad — homes, a hospital and a restaurant, built to one uncompromising standard.
           </p>
         </div>
         <ul className="sg-m__strip">

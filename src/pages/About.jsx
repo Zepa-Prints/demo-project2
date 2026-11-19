@@ -210,8 +210,8 @@ const START = new Date().getFullYear() - COMPANY.experience
 const MILESTONES = [
   [String(START), 'First years on site', 'Our team learns the trade with a large corporate builder — towers, hospitals and factories, every one completed and handed over.', PHOTOS.previous1],
   [String(COMPANY.founded), 'Yashveer Constructions founded', 'With years of site experience behind it, the company is set up in Vijayawada.', IMG.blueprint],
-  ['01', 'Kamala Residency, Vijayawada', 'Fifty 2 & 3 BHK homes on 100 Feet Road, Kanuru — and home to our head office.', sm(PHOTOS.kamalaFront)],
-  ['02', 'Isha Hospitals, Guntur', 'A premium hospital building with bright, clean wards, now serving patients.', PHOTOS.ishaWard],
+  ['01', 'Residential Apartments, Vijayawada', 'Ninety 2 & 3 BHK flats on 100 Feet Road, Kanuru — and home to our head office.', sm(PHOTOS.kamalaFront)],
+  ['02', 'Isha Hospitals, Nandigama', 'A premium hospital building with bright, clean wards, now serving patients.', PHOTOS.ishaWard],
   ['03', 'Svaadishta, Vijayawada', 'A relaxed, lantern-lit restaurant at Kamayyathopu Centre.', sm(PHOTOS.svFrontage)],
   ['Now', 'PG Hostel, Hyderabad', 'Our first project in Telangana — under construction.', sm(PHOTOS.pgExterior)],
 ]
@@ -271,7 +271,7 @@ const APPROACH = [
   },
   {
     title: 'Care after the keys',
-    text: 'We stay reachable long after handover. Our head office is inside Kamala Residency — we see our work every day.',
+    text: 'We stay reachable long after handover. Our head office is inside one of our own apartment buildings — we see our work every day.',
     img: sm(PHOTOS.kamalaKitchen),
   },
 ]
@@ -300,7 +300,7 @@ export default function About() {
             design to handover ourselves, across India.
           </p>
           <p className="lead" data-fade>
-            Under our own name we have delivered Kamala Residency&rsquo;s fifty homes in Vijayawada, Isha Hospitals in Guntur
+            Under our own name we have delivered ninety residential apartments in Vijayawada, Isha Hospitals in Nandigama
             and the Svaadishta restaurant in Kanuru — and we are now building a PG hostel in Hyderabad. Our own developments,
             and your projects on your land: both, built the same way.
           </p>
@@ -316,7 +316,7 @@ export default function About() {
         <ImageStack
           className="ab-intro__stack"
           images={[sm(PHOTOS.kamalaBedroom), sm(PHOTOS.kamalaDining), sm(PHOTOS.kamalaCourtyard)]}
-          caption="Inside Kamala Residency"
+          caption="Inside Residential Apartments"
         />
       </section>
 
@@ -417,7 +417,7 @@ export default function About() {
             See what we&rsquo;ve <em>built</em>
           </SplitReveal>
           <p className="lead" data-fade>
-            Homes in Vijayawada, a hospital in Guntur, a restaurant in Kanuru — and Hyderabad next.
+            Homes in Vijayawada, a hospital in Nandigama, a restaurant in Kanuru — and Hyderabad next.
           </p>
           <TLink to="/projects" className="btn" data-fade>
             Explore our projects <Arrow />

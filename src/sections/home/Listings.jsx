@@ -55,7 +55,7 @@ export default function Listings({ index = '06' }) {
             Explore the <em>spaces</em> we&rsquo;ve built
           </SplitReveal>
           <p className="lead">
-            Homes in Vijayawada, a hospital in Guntur, a restaurant in Kanuru and a PG hostel rising in Hyderabad — each one
+            Homes in Vijayawada, a hospital in Nandigama, a restaurant in Kanuru and a PG hostel rising in Hyderabad — each one
             built by the same team, to the same 25-point standard.
           </p>
         </div>

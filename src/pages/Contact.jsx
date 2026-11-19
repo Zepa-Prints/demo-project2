@@ -110,7 +110,7 @@ export default function Contact() {
 
       <div className="ct__visit" data-ct-fade>
         <div className="ct__visit-media">
-          <Img img={sm(PHOTOS.kamalaCourtyard)} w={1600} alt="Kamala Residency courtyard" />
+          <Img img={sm(PHOTOS.kamalaCourtyard)} w={1600} alt="Residential Apartments courtyard" />
         </div>
         <div className="ct__visit-body">
           <span className="label">Visit us</span>
@@ -118,7 +118,7 @@ export default function Contact() {
             Our office is inside <em>a building we made.</em>
           </h2>
           <p>
-            Come to Flat 501, Kamala Residency in Kanuru — see our finished work for yourself, then talk plans over tea.
+            Come to our head office in Kanuru — it sits inside one of our own buildings. See our finished work for yourself, then talk plans over tea.
           </p>
           <a className="btn btn--light" href={waLink()} target="_blank" rel="noreferrer">
             Schedule on WhatsApp ↗
@@ -127,7 +127,7 @@ export default function Contact() {
       </div>
       <div className="ct__map" data-ct-fade>
         <iframe
-          title="Yashveer Constructions head office, Kamala Residency"
+          title="Yashveer Constructions head office, Kanuru, Vijayawada"
           src={`https://maps.google.com/maps?q=${encodeURIComponent(COMPANY.offices[0].coords)}&z=16&output=embed`}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

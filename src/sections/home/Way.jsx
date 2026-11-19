@@ -102,10 +102,10 @@ export default function Way() {
           </p>
         </div>
         <figure className="way__figure">
-          <RevealImage img={sm(PHOTOS.kamalaCourtyard)} alt="Landscaped courtyard at Kamala Residency" className="way__figure-img" ratio="4 / 5" w={1000} parallax={14} />
+          <RevealImage img={sm(PHOTOS.kamalaCourtyard)} alt="Landscaped courtyard at Residential Apartments" className="way__figure-img" ratio="4 / 5" w={1000} parallax={14} />
           <figcaption className="way__figure-cap" data-fade>
             <span className="label">The courtyard</span>
-            <span>Kamala Residency, Vijayawada</span>
+            <span>Residential Apartments, Vijayawada</span>
           </figcaption>
         </figure>
       </div>
@@ -127,7 +127,7 @@ export default function Way() {
             </TLink>
           </div>
         </div>
-        <RevealImage img={sm(PHOTOS.kamalaBedroom)} alt="Bedroom at Kamala Residency" className="way__img way__img--sm" ratio="3 / 4" w={900} />
+        <RevealImage img={sm(PHOTOS.kamalaBedroom)} alt="Bedroom at Residential Apartments" className="way__img way__img--sm" ratio="3 / 4" w={900} />
       </div>
     </section>
   )
